@@ -1,4 +1,5 @@
 # Aplicación R Shiny: declaraR: Evaluación de la Conformidad Metrológica Integrada
+
 Basada en JCGM 106:2012 e ILAC G8:09/2019
 Versión: 2026.01
 Fecha: 2026-10-12
@@ -34,11 +35,11 @@ https://orcid.org/0000-0002-3596-0373
 
 # Referencias
 
-[1] Chang, W., Cheng, J., Allaire, J. J., Sievert, C., Schloerke, B., Xie, Y., Allen, J., McPherson, J., Dipert, A., & Borges, B.(2024). shiny: Web Application Framework for R (R package version 1.8.1.1). https://CRAN.R-project.org/package=shiny
-[2] Cheng, J., Sievert, C., & Posit Software, PBC.** (2024). shinylive: Run Shiny Applications in the Browser [Software de computación]. Posit Software. https://shiny.posit.co/r/shinylive/
-[3] ILAC.(2019). Guidelines on decision rules and statements of conformity** (ILAC-G8:09/2019). International Laboratory Accreditation Cooperation. https://ilac.org/publications-and-resources/ilac-guidance-series/
-[4] JCGM.(2012). Evaluation of measurement data – The role of measurement uncertainty in conformity assessment** (JCGM 106:2012). Joint Committee for Guides in Metrology (BIPM, IEC, IFCC, ILAC, IAO, IUPAC, IUPAP y OIML). https://www.bipm.org/en/committees/jc/jcgm/publications
-[5] R Core Team. (2024). R: A language and environment for statistical computing**. R Foundation for Statistical Computing, Vienna, Austria. https://www.R-project.org/
-[6] Wickham, H. (2016). ggplot2: Elegant Graphics for Data Analysis**. Springer-Verlag New York. https://ggplot2.tidyverse.org
+1. Chang, W., Cheng, J., Allaire, J. J., Sievert, C., Schloerke, B., Xie, Y., Allen, J., McPherson, J., Dipert, A., & Borges, B.(2024). shiny: Web Application Framework for R (R package version 1.8.1.1). https://CRAN.R-project.org/package=shiny
+2. Cheng, J., Sievert, C., & Posit Software, PBC.** (2024). shinylive: Run Shiny Applications in the Browser [Software de computación]. Posit Software. https://shiny.posit.co/r/shinylive/
+3. ILAC.(2019). Guidelines on decision rules and statements of conformity** (ILAC-G8:09/2019). International Laboratory Accreditation Cooperation. https://ilac.org/publications-and-resources/ilac-guidance-series/
+4. JCGM.(2012). Evaluation of measurement data – The role of measurement uncertainty in conformity assessment** (JCGM 106:2012). Joint Committee for Guides in Metrology (BIPM, IEC, IFCC, ILAC, IAO, IUPAC, IUPAP y OIML). https://www.bipm.org/en/committees/jc/jcgm/publications
+5. Core Team. (2024). R: A language and environment for statistical computing**. R Foundation for Statistical Computing, Vienna, Austria. https://www.R-project.org/
+6. Wickham, H. (2016). ggplot2: Elegant Graphics for Data Analysis**. Springer-Verlag New York. https://ggplot2.tidyverse.org
 
 **Fin**
