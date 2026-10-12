@@ -1,14 +1,10 @@
-# ==============================================================================
-
 # Aplicación R Shiny: declaraR: Evaluación de la Conformidad Metrológica Integrada
-# Basada en JCGM 106:2012 e ILAC G8:09/2019
-# Versión: 2026.01
-# Fecha: 2026-10-12
-# G. Morales
-# ORCID: 0000-0002-3596-0373
-# Licencia: GNU General Public License (GPL v3.0) 
-
-# ==============================================================================
+Basada en JCGM 106:2012 e ILAC G8:09/2019
+Versión: 2026.01
+Fecha: 2026-10-12
+G. Morales
+ORCID: 0000-0002-3596-0373
+Licencia: GNU General Public License (GPL v3.0) 
 
 # Descripción
 
@@ -16,18 +12,16 @@
 2. Reglas de decision: Simple, Banda Aceptacion, Banda Rechazo
 3. Generacion de reporte impreso / PDF
 
-# Acceso Directo a la Aplicación Web
+Acceso Directo a la Aplicación Web
 
 No requiere instalación local de R ni configuración de servidores R Shiny Server. 
 La aplicación se ejecuta al 100% en el navegador del usuario:
 
 https://mbgabriel.github.io/declaraR/
 
-# Repositorio
+Repositorio
 
 https://github.com/MBGabriel/declaraR.git
-
-# ==============================================================================
 
 # Información de Contacto
 
@@ -37,8 +31,6 @@ Laboratorio de Análisis Fisicoquímico y Microbiológico.
 Calle 22 # 11E-05. Vía oriente. Pasto, Nariño. Colombia.
 ogmorales@sena.edu.co; morales.b.gabriel@gmail.com;
 https://orcid.org/0000-0002-3596-0373
-
-# ==============================================================================
 
 # Referencias
 
