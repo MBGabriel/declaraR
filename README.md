@@ -1,6 +1,6 @@
-# Aplicación R Shiny: declaraR: Evaluación de la Conformidad Metrológica Integrada
+# declaraR: Evaluación de la Conformidad Metrológica
 
-Basada en JCGM 106:2012 e ILAC G8:09/2019
+Aplicación R Shiny: Basada en JCGM 106:2012 e ILAC G8:09/2019
 
 Versión: 2026.01
 
