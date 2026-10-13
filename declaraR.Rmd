@@ -1,0 +1,251 @@
+---
+title: "Aplicación Web: 'declaraR' - Evaluación de la Conformidad Metrológica"
+subtitle: "Versión: 2026.01"
+author: "G. Morales^[Servicio Nacional de Aprendizaje SENA. Regional Nariño. Centro Internacional de Producción Limpia Lope. <br> Laboratorio de Análisis Fisicoquímico y Microbiológico. Calle 22 # 11E-05. Vía oriente. Pasto, Nariño. Colombia. 
+<ogmorales@sena.edu.co> ; <morales.b.gabriel@gmail.com> ; <https://orcid.org/0000-0002-3596-0373>]"
+email: "ogmorales@sena.edu.co"
+date: "2026-10-12"
+output: 
+  pdf_document:
+    toc: TRUE
+    toc_depth: 3
+header-includes:
+  - \renewcommand{\contentsname}{Contenido}
+editor_options: 
+  markdown: 
+    wrap: 72
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+#Activar paquetes
+```
+
+\newpage
+
+[License GPL (Version 3)](https://www.gnu.org/licenses/gpl-3.0.html)
+
+Copyright (C) \<2026\> \<G. Morales\>
+
+This program is free software: you can redistribute it and/or modify it
+under the terms of the GNU General Public License as published by the
+Free Software Foundation, either version 3 of the License, or (at your
+option) any later version.
+
+This program is distributed in the hope that it will be useful, but
+WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General
+Public License for more details.
+
+You should have received a copy of the GNU General Public License along
+with this program. If not, see <https://www.gnu.org/licenses/>
+
+\newpage
+
+## Alcance
+
+La aplicación R shiny: 'declaraR' es aplicable para la evaluación de la
+conformidad de los resultados de una medición según los documentos
+técnicos JCGM 106:2012 e ILAC G8:09/2019.
+
+La aplicación ha sido desarrollada en lenguaje de programación R y
+utiliza los paquetes: `shiny` y `ggplot2`. Sin embargo, no requiere de
+la instalación local de R ni configuración de servidores R Shiny Server.
+
+La aplicación se ejecuta al 100% en el navegador del usuario, a través
+de: <https://mbgabriel.github.io/declaraR/>
+
+A través de este enlace puede acceder al respositorio GitHub:
+<https://github.com/MBGabriel/declaraR.git>
+
+\newpage
+
+## Terminos y deficiones
+
+Los siguientes términos y definiciones fueron tomados de JCGM 106: 2012
+y JCGM 200:2012
+
+\textbf{Magnitud, f}
+
+propiedad de un fenómeno, cuerpo o sustancia, que puede expresarse
+cuantitativamente mediante un número y una referencia.
+
+\textbf{Unidad de medida, f} unidad, f
+
+magnitud escalar real, definida y adoptada por convenio, con la que se
+puede comparar cualquier otra magnitud de la misma naturaleza para
+expresar la relación entre ambas mediante un número.
+
+\textbf{Valor de una magnitud, m} valor, m
+
+conjunto formado por un número y una referencia, que constituye la
+expresión cuantitativa de una magnitud.
+
+\textbf{Medición, f} medida, f
+
+proceso que consiste en obtener experimentalmente uno o varios valores
+que pueden atribuirse razonablemente a una magnitud.
+
+\textbf{Metrología, f}
+
+ciencia de las mediciones y sus aplicaciones.
+
+\textbf{Mensurando, m}
+
+magnitud que se desea medir.
+
+\textbf{Incertidumbre de medida , f} incertidumbre, f
+
+parámetro no negativo que caracteriza la dispersión de los valores
+atribuidos a un mensurando, a partir de la información que se utiliza.
+
+\textbf{Incertidumbre expandida de medida, f} incertidumbre expandida, f
+
+producto de una incertidumbre típica combinada y un factor mayor que
+uno.
+
+\textbf{Evaluación de la conformidad, f}
+
+actividad para determinar si se cumplen los requisitos especificados
+relativos a un producto, proceso, sistema, persona u organismo.
+
+\textbf{Requisito especificado, m}
+
+necesidad o expectativa declarada.
+
+\textbf{Límite de tolerancia, m} límite de especificación, m
+
+límite superior o inferior especificado de los valores admisibles de una
+propiedad.
+
+\textbf{Intervalo de tolerancia, m}
+
+intervalo de valores admisibles de una propiedad.
+
+\textbf{Tolerancia, f} tolerancia especificada, f
+
+diferencia entre los límites superior e inferior de tolerancia.
+
+\textbf{Probabilidad de conformidad, f}
+
+Probabilidad de que un elemento cumpla con un requisito especificado.
+
+\textbf{Límite de aceptación, m}
+
+Límite superior o inferior especificado de los valores de magnitud
+medidos permisibles.
+
+\textbf{Intervalo de aceptación, m}
+
+Intervalo de valores de magnitud medidos permisibles.
+
+\textbf{Intervalo de rechazo, m}
+
+Intervalo de valores de magnitud medidos no permisibles.
+
+\textbf{Banda de guarda, f}
+
+Intervalo entre un límite de tolerancia y un límite de aceptación
+correspondiente.
+
+\textbf{Regla de decisión, f}
+
+Regla documentada que describe cómo se tendrá en cuenta la incertidumbre
+de la medición con respecto a la aceptación o el rechazo de un artículo,
+dado un requisito específico y el resultado de una medición.
+
+\textbf{Riesgo específico del consumidor, m}
+
+Probabilidad de que un artículo aceptado en particular no cumpla con las
+especificaciones.
+
+\textbf{Riesgo específico del productor, m}
+
+Probabilidad de que un artículo rechazado en particular cumpla con las
+especificaciones.
+
+\newpage
+
+## Fundamentos metrólogicos
+
+La aplicación 'declaraR' se fundamenta en los documentos de referencia JCGM 106:2012 e ILAC G8:09/2019.
+
+\textbf{Regla Simple (w = 0):} Los límites de aceptación coinciden con los de tolerancia (AL = TL). Riesgo compartido entre cliente y laboratorio.
+
+
+\textbf{Banda de Guarda de Aceptación (w = r * U):} Reduce el intervalo de aceptación (AL_L = TL_L + w, AL_U = TL_U - w) para mitigar el riesgo de falsa aceptación (consumidor) a \<= 2.5% cuando r = 1.
+
+\textbf{Banda de Guarda de Rechazo (w = r * U):} Amplía el intervalo de aceptación (AL_L = TL_L - w, AL_U = TL_U + w) para mitigar el riesgo de falso rechazo (productor) a \<= 2.5% cuando r = 1.
+
+\textbf{Especificaciones Unilaterales:} Cuando solo se define TL_L o TL_U, el cálculo de probabilidad e intervalo de aceptación se adapta automáticamente al límite existente.
+
+\newpage
+
+## Ejemplo de aplicación
+
+A continuación, se presenta un ejemplo de aplicación para la evaluación de la conformidad para un resultado de medición de pH en agua potable.
+
+El resultado a evaluar es: 7,1 unidades de pH 
+
+Incertidumbre expandida (U, k = 2): 0,12 unidades de pH
+
+La evaluación de la conformidad se realiza de acuerdo con los valores aceptables (o límites de tolerancia) de la Resolución 2115 del 22 junio de 2007 del Ministerio de la Protección Social y Ministerio de Ambiente, Vivienda y Desarrollo Territorial de la República de Colombia. <https://minvivienda.gov.co/normativa/resolucion-2115-2007>, correspondientes a:
+
+TU_L = 6,5 unidades de pH 
+
+TU_U = 9,0 unidades de pH
+
+En la Resolución 2115 de 2007, no se específica la regla de decisión requerida para la evaluación de la conformidad, por lo que se decide aplicar: Regla Simple (w = 0).
+
+A continuación, se muestra la forma de ingreso de información en la aplicación ‘declaraR’ para la evaluación de la conformidad del ejemplo.
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.6\textwidth]{img/captura_01.png}
+    \caption{Ingreso de la información en la aplicación ‘declaraR’.}
+    \label{fig:captura01}
+\end{figure}
+
+La aplicación presenta los resultados y la declaración así:
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.9\textwidth]{img/captura_02.png}
+    \caption{Resultados y declaración de la aplicación ‘declaraR’.}
+    \label{fig:captura02}
+\end{figure}
+
+Por último, el reporte de la aplicación del ejemplo se presenta así:
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.9\textwidth]{img/captura_03.png}
+    \caption{Reporte de la aplicación ‘declaraR’.}
+    \label{fig:captura03}
+\end{figure}
+
+\newpage
+
+## Abreviaturas
+
+AL : Límite de Aceptación.
+
+AL_L : Límite de Aceptación Inferior.
+
+AL_U : Límite de Aceptación Superior.
+
+k : Factor de cobertura
+
+r : Factor o Multiplicador de Banda de Guarda.
+
+TL : Límite de Tolerancia.
+
+TL_L : Límite de Tolerancia Inferior.
+
+TL_U : Límite de Tolerancia Superior.
+
+TUR : Relación de Incertidumbre de Prueba.
+
+U : Incertidumbre expandida.
+
+w : Banda de Guarda.
